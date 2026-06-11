@@ -23,7 +23,7 @@
 \begin{document}
 \maketitle
 
-\section{数学}
+\section{测度论与概率论}
 
 \begin{AI}
 “一门学问，只有当它成功地被数学化时，才算真正开始了对自身的研究。”
@@ -38,9 +38,99 @@ $\mathcal{F}$ 是 $\Omega$ 上的 $\sigma$-代数，
 $P$ 是定义在 $\mathcal{F}$ 上的概率测度。
 在这个三元组中，
 $\Omega$ 描述了所有可能的结果，
-$\mathcal{F}$ 描述了事件的集合，
-而 $P$ 则为每个事件分配了一个概率值。
+$\mathcal{F}$ 描述了事件的集合，如\eqref{eq:sigma-algebra}所示，
+而 $P$ 则为每个事件分配了一个概率值，如\eqref{eq:probability-measure}所示。
 因此，概率论提供了一个严密的框架来描述和分析不确定性。
 在这个框架中，我们可以定义随机变量、概率分布、期望值、方差等概念，这些都是理解和量化不确定性的关键工具。
+
+\begin{equation}
+    \mathcal{F} = \{
+      \emptyset,  A_1, A_2, \ldots,  A_n, \Omega
+    \}
+    \label{eq:sigma-algebra}
+\end{equation}
+
+\begin{equation}
+    P: \mathcal{F} \to [0, 1] \subset \mathbb{R}, \quad P(\Omega) = 1, \quad P(\emptyset) = 0
+    \label{eq:probability-measure}
+\end{equation}
+
+
+\begin{AI}
+  $\sigma$-代数可以理解为“在概率空间中允许被讨论和赋予概率的一类事件集合”。
+
+  更具体地说，设 $\mathcal{F}$ 是样本空间 $\Omega$ 的若干子集构成的集合，若它满足以下三条性质，就称 $\mathcal{F}$ 是一个 $\sigma$-代数：
+  \begin{enumerate}
+    \item $\Omega \in \mathcal{F}$（全集事件可测）；
+    \item 若 $A \in \mathcal{F}$，则其补集 $A^c \in \mathcal{F}$（对补运算封闭）；
+    \item 若 $A_1, A_2, \dots \in \mathcal{F}$，则 $\bigcup_{n=1}^{\infty} A_n \in \mathcal{F}$（对可数并封闭）。
+  \end{enumerate}
+
+  由这些性质还能推出：$\emptyset \in \mathcal{F}$，并且对可数交也封闭。直观上，$\sigma$-代数规定了“哪些事件是可测的”，从而保证概率测度 $P$ 可以在这些事件上被一致、无矛盾地定义。
+\end{AI}
+
+\section{随机变量、概率密度与概率分布}
+
+当一个量在$\Omega$上取值时，我们称它为一个随机变量。
+随机变量可以是离散的，也可以是连续的。
+
+当$\Omega \subseteq \mathbb{R}$时，我们通常使用概率分布函数（CDF）来描述随机变量的分布。
+概率分布函数 $F(x)$ 满足以下条件：
+
+\begin{equation}
+    F(x) = P(X \leq x), \quad \forall x \in \mathbb{R}
+\end{equation}
+
+概率密度函数（PDF）用来描述连续随机变量的分布。
+概率密度函数 $f(x)$ 满足以下条件：
+
+\begin{equation}
+    f(x) \geq 0, \quad \forall x \in \mathbb{R}
+\end{equation}
+
+\begin{equation}
+    \int_{-\infty}^{\infty} f(x) \, dx = 1
+\end{equation}
+
+\begin{AI}
+  概率密度函数（PDF）是描述连续随机变量分布的函数。对于一个连续随机变量 $X$，其概率密度函数 $f(x)$ 满足以下条件：
+
+  1. 非负性：$f(x) \geq 0$ 对于所有 $x \in \mathbb{R}$ 都成立。这意味着概率密度函数的值不能为负数。
+  
+  2. 归一化：$\int_{-\infty}^{\infty} f(x) \, dx = 1$。这表示整个实数轴上的概率密度函数的积分必须等于1，确保了总概率为1。
+
+  概率密度函数的意义在于，对于任意区间 $[a, b]$，随机变量 $X$ 落在该区间内的概率可以通过积分计算得到：
+
+  \begin{equation}
+      P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx
+  \end{equation}
+
+  因此，概率密度函数提供了一种方式来量化连续随机变量在不同取值范围内的概率分布。
+\end{AI}
+
+\begin{AI}
+    概率分布函数（CDF）是描述随机变量分布的函数。对于一个随机变量 $X$，其概率分布函数 $F(x)$ 定义为：
+    
+    \begin{equation}
+        F(x) = P(X \leq x), \quad \forall x \in \mathbb{R}
+    \end{equation}
+    
+    概率分布函数具有以下性质：
+    
+    1. 非递减性：$F(x)$ 是一个非递减函数，即如果 $x_1 < x_2$，则 $F(x_1) \leq F(x_2)$。
+    
+    2. 极限性质：$\lim_{x \to -\infty} F(x) = 0$ 和 $\lim_{x \to \infty} F(x) = 1$。这表示当 $x$ 趋近于负无穷时，CDF 的值趋近于0；当 $x$ 趋近于正无穷时，CDF 的值趋近于1。
+    
+    3. 与概率密度函数的关系：对于连续随机变量，如果存在概率密度函数 $f(x)$，则概率分布函数 $F(x)$ 可以通过积分得到：
+    
+    \begin{equation}
+        F(x) = \int_{-\infty}^{x} f(t) \, dt
+    \end{equation}
+    
+    因此，概率分布函数提供了一种方式来描述随机变量在不同取值范围内的累积概率。
+\end{AI}
+
+\section{均值、方差与无偏估计}
+
 
 \end{document}
