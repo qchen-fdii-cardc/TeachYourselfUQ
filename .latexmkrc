@@ -13,3 +13,4 @@ $xelatex = 'xelatex -interaction=nonstopmode -file-line-error -synctex=1 %O %S';
 # Use wslview for PDF preview in WSL
 $pdf_previewer = 'wslview %S';
 
+$force_mode = 1; # -f
