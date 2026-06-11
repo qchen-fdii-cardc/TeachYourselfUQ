@@ -26,7 +26,7 @@
 \section{测度论与概率论}
 
 \begin{AI}
-“一门学问，只有当它成功地被数学化时，才算真正开始了对自身的研究。”
+    “一门学问，只有当它成功地被数学化时，才算真正开始了对自身的研究。”
 \end{AI}
 
 要描述不确定性，其基础就是数理统计、概率论、随机过程等工具。
@@ -45,7 +45,7 @@ $\mathcal{F}$ 描述了事件的集合，如\eqref{eq:sigma-algebra}所示，
 
 \begin{equation}
     \mathcal{F} = \{
-      \emptyset,  A_1, A_2, \ldots,  A_n, \Omega
+    \emptyset,  A_1, A_2, \ldots,  A_n, \Omega
     \}
     \label{eq:sigma-algebra}
 \end{equation}
@@ -55,18 +55,17 @@ $\mathcal{F}$ 描述了事件的集合，如\eqref{eq:sigma-algebra}所示，
     \label{eq:probability-measure}
 \end{equation}
 
-
 \begin{AI}
-  $\sigma$-代数可以理解为“在概率空间中允许被讨论和赋予概率的一类事件集合”。
+    $\sigma$-代数可以理解为“在概率空间中允许被讨论和赋予概率的一类事件集合”。
 
-  更具体地说，设 $\mathcal{F}$ 是样本空间 $\Omega$ 的若干子集构成的集合，若它满足以下三条性质，就称 $\mathcal{F}$ 是一个 $\sigma$-代数：
-  \begin{enumerate}
-    \item $\Omega \in \mathcal{F}$（全集事件可测）；
-    \item 若 $A \in \mathcal{F}$，则其补集 $A^c \in \mathcal{F}$（对补运算封闭）；
-    \item 若 $A_1, A_2, \dots \in \mathcal{F}$，则 $\bigcup_{n=1}^{\infty} A_n \in \mathcal{F}$（对可数并封闭）。
-  \end{enumerate}
+    更具体地说，设 $\mathcal{F}$ 是样本空间 $\Omega$ 的若干子集构成的集合，若它满足以下三条性质，就称 $\mathcal{F}$ 是一个 $\sigma$-代数：
+    \begin{enumerate}
+        \item $\Omega \in \mathcal{F}$（全集事件可测）；
+        \item 若 $A \in \mathcal{F}$，则其补集 $A^c \in \mathcal{F}$（对补运算封闭）；
+        \item 若 $A_1, A_2, \dots \in \mathcal{F}$，则 $\bigcup_{n=1}^{\infty} A_n \in \mathcal{F}$（对可数并封闭）。
+    \end{enumerate}
 
-  由这些性质还能推出：$\emptyset \in \mathcal{F}$，并且对可数交也封闭。直观上，$\sigma$-代数规定了“哪些事件是可测的”，从而保证概率测度 $P$ 可以在这些事件上被一致、无矛盾地定义。
+    由这些性质还能推出：$\emptyset \in \mathcal{F}$，并且对可数交也封闭。直观上，$\sigma$-代数规定了“哪些事件是可测的”，从而保证概率测度 $P$ 可以在这些事件上被一致、无矛盾地定义。
 \end{AI}
 
 \section{随机变量、概率密度与概率分布}
@@ -93,44 +92,159 @@ $\mathcal{F}$ 描述了事件的集合，如\eqref{eq:sigma-algebra}所示，
 \end{equation}
 
 \begin{AI}
-  概率密度函数（PDF）是描述连续随机变量分布的函数。对于一个连续随机变量 $X$，其概率密度函数 $f(x)$ 满足以下条件：
+    概率密度函数（PDF）是描述连续随机变量分布的函数。对于一个连续随机变量 $X$，其概率密度函数 $f(x)$ 满足以下条件：
 
-  1. 非负性：$f(x) \geq 0$ 对于所有 $x \in \mathbb{R}$ 都成立。这意味着概率密度函数的值不能为负数。
-  
-  2. 归一化：$\int_{-\infty}^{\infty} f(x) \, dx = 1$。这表示整个实数轴上的概率密度函数的积分必须等于1，确保了总概率为1。
+    1. 非负性：$f(x) \geq 0$ 对于所有 $x \in \mathbb{R}$ 都成立。这意味着概率密度函数的值不能为负数。
 
-  概率密度函数的意义在于，对于任意区间 $[a, b]$，随机变量 $X$ 落在该区间内的概率可以通过积分计算得到：
+    2. 归一化：$\int_{-\infty}^{\infty} f(x) \, dx = 1$。这表示整个实数轴上的概率密度函数的积分必须等于1，确保了总概率为1。
 
-  \begin{equation}
-      P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx
-  \end{equation}
+    概率密度函数的意义在于，对于任意区间 $[a, b]$，随机变量 $X$ 落在该区间内的概率可以通过积分计算得到：
 
-  因此，概率密度函数提供了一种方式来量化连续随机变量在不同取值范围内的概率分布。
+    \begin{equation}
+        P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx
+    \end{equation}
+
+    因此，概率密度函数提供了一种方式来量化连续随机变量在不同取值范围内的概率分布。
 \end{AI}
 
 \begin{AI}
     概率分布函数（CDF）是描述随机变量分布的函数。对于一个随机变量 $X$，其概率分布函数 $F(x)$ 定义为：
-    
+
     \begin{equation}
         F(x) = P(X \leq x), \quad \forall x \in \mathbb{R}
     \end{equation}
-    
+
     概率分布函数具有以下性质：
-    
+
     1. 非递减性：$F(x)$ 是一个非递减函数，即如果 $x_1 < x_2$，则 $F(x_1) \leq F(x_2)$。
-    
+
     2. 极限性质：$\lim_{x \to -\infty} F(x) = 0$ 和 $\lim_{x \to \infty} F(x) = 1$。这表示当 $x$ 趋近于负无穷时，CDF 的值趋近于0；当 $x$ 趋近于正无穷时，CDF 的值趋近于1。
-    
+
     3. 与概率密度函数的关系：对于连续随机变量，如果存在概率密度函数 $f(x)$，则概率分布函数 $F(x)$ 可以通过积分得到：
-    
+
     \begin{equation}
         F(x) = \int_{-\infty}^{x} f(t) \, dt
     \end{equation}
-    
+
     因此，概率分布函数提供了一种方式来描述随机变量在不同取值范围内的累积概率。
 \end{AI}
 
 \section{均值、方差与无偏估计}
 
+随机变量的均值（期望值）和方差是描述其分布特征的重要统计量。
+对于一个随机变量 $X$，其均值（期望值）定义为：
+
+\begin{equation}
+    \mu \equiv \mathbb{E}[X] = \int_{-\infty}^{\infty} x f(x) \, dx
+\end{equation}
+
+方差定义为：
+
+\begin{equation}
+    \sigma^2 \equiv \mathrm{Var}(X) = \mathbb{E}[{(X - \mu)}^2] = \int_{-\infty}^{\infty} {(x - \mu)}^2 f(x) \, dx
+\end{equation}
+
+无偏估计是指一个统计量的估计值等于其期望值。
+如果一个变量$X$的$n$次样本均值$\bar{X}$满足$\mathbb{E}[\bar{X}] = \mu$，其中$\mu$是总体均值，那么$\bar{X}$就是$\mu$的无偏估计。
+
+对于方差的无偏估计，我们通常使用样本方差 $S^2$，定义为：
+
+\begin{equation}
+    S^2 = \frac{1}{n-1} \sum_{i=1}^{n} {(X_i - \bar{X})}^2
+    \label{eq:unbiased-variance-estimator}
+\end{equation}
+
+\begin{AI}
+    与\eqref{eq:unbiased-variance-estimator}所给样本方差 $S^2$ 相对应的还有一个有偏估计 $\mathcal{T}^2$，定义为：
+    \begin{equation}
+        \mathcal{T}^2 = \frac{1}{n} \sum_{i=1}^{n} {(X_i - \bar{X})}^2
+        \label{eq:biased-variance-estimator}
+    \end{equation}
+
+    样本方差 $S^2$ 是总体方差 $\sigma^2$ 的无偏估计，而 $\mathcal{T}^2$ 则是有偏估计。
+    具体来说，$\mathbb{E}[S^2] = \sigma^2$，而 $\mathbb{E}[\mathcal{T}^2] = \frac{n-1}{n} \sigma^2$。
+
+    为了完整推导，设 $X_1,\dots,X_n$ 独立同分布，且
+    $\mathbb{E}[X_i]=\mu$，$\mathrm{Var}(X_i)=\sigma^2<\infty$。
+    样本均值定义为
+    \begin{equation}
+        \bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i.
+    \end{equation}
+
+    先证明一个关键恒等式：
+    \begin{equation}
+        \sum_{i=1}^{n}{(X_i-\bar{X})}^2
+        = \sum_{i=1}^{n}{(X_i-\mu)}^2 - n{(\bar{X}-\mu)}^2.
+        \label{eq:variance-decomposition}
+    \end{equation}
+
+    证明如下。由
+    \begin{equation}
+        X_i-\bar{X}=(X_i-\mu)-(\bar{X}-\mu),
+    \end{equation}
+    两边平方并求和得
+    \begin{equation}
+        \begin{split}
+            \sum_{i=1}^{n}{(X_i-\bar{X})}^2
+             & = \sum_{i=1}^{n}{(X_i-\mu)}^2
+            -2(\bar{X}-\mu)\sum_{i=1}^{n}(X_i-\mu)
+            +\sum_{i=1}^{n}{(\bar{X}-\mu)}^2                       \\
+             & = \sum_{i=1}^{n}{(X_i-\mu)}^2
+            -2(\bar{X}-\mu)\cdot n(\bar{X}-\mu)
+            +n{(\bar{X}-\mu)}^2                                    \\
+             & = \sum_{i=1}^{n}{(X_i-\mu)}^2 - n{(\bar{X}-\mu)}^2.
+        \end{split}
+    \end{equation}
+    因此\eqref{eq:variance-decomposition}成立。
+
+    另外，独立同分布条件下
+    \begin{equation}
+        \begin{split}
+            \mathrm{Var}(\bar{X})
+             & = \mathrm{Var}\left(\frac{1}{n}\sum_{i=1}^{n}X_i\right)
+            = \frac{1}{n^2}\mathrm{Var}\left(\sum_{i=1}^{n}X_i\right)  \\
+             & = \frac{1}{n^2}\sum_{i=1}^{n}\mathrm{Var}(X_i)
+            = \frac{1}{n^2}\cdot n\sigma^2
+            = \frac{\sigma^2}{n}.
+        \end{split}
+    \end{equation}
+
+    接着对\eqref{eq:variance-decomposition}两侧取期望：
+    \begin{equation}
+        \begin{split}
+            \mathbb{E}\left[\sum_{i=1}^{n}{(X_i-\bar{X})}^2\right]
+             & = \mathbb{E}\left[\sum_{i=1}^{n}{(X_i-\mu)}^2\right]
+            - n\,\mathbb{E}\left[{(\bar{X}-\mu)}^2\right]           \\
+             & = \sum_{i=1}^{n}\mathbb{E}[{(X_i-\mu)}^2]
+            - n\,\mathrm{Var}(\bar{X})                              \\
+             & = n\sigma^2 - n\cdot\frac{\sigma^2}{n}
+            = (n-1)\sigma^2.
+        \end{split}
+    \end{equation}
+
+    于是
+    \begin{equation}
+        \begin{split}
+            \mathbb{E}[S^2]
+             & = \mathbb{E}\left[\frac{1}{n-1}\sum_{i=1}^{n}{(X_i-\bar{X})}^2\right]   \\
+             & = \frac{1}{n-1}\,\mathbb{E}\left[\sum_{i=1}^{n}{(X_i-\bar{X})}^2\right] \\
+             & = \frac{1}{n-1}\cdot (n-1)\sigma^2
+            = \sigma^2.
+        \end{split}
+    \end{equation}
+    这说明 $S^2$ 是总体方差 $\sigma^2$ 的无偏估计。
+
+    同理可得
+    \begin{equation}
+        \begin{split}
+            \mathbb{E}[\mathcal{T}^2]
+             & = \mathbb{E}\left[\frac{1}{n}\sum_{i=1}^{n}{(X_i-\bar{X})}^2\right] \\
+             & = \frac{1}{n}\,(n-1)\sigma^2
+            = \frac{n-1}{n}\sigma^2.
+        \end{split}
+    \end{equation}
+    因此，分母用 $n$ 时会系统性低估总体方差，偏差因子为 $\frac{n-1}{n}$。
+
+\end{AI}
 
 \end{document}
