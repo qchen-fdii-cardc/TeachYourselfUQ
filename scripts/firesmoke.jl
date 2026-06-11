@@ -12,6 +12,10 @@
 # plot(x, @. sin(x) + cos(x); label = "sin(x) + cos(x)", title = "Firesmoke Plot", xlabel = "x", ylabel = "sin(x) + cos(x)")
 # savefig("imgs/firesmoke_plot.png")
 
+# make dirctory imgs if it doesn't exist
+if !isdir("imgs")
+	mkdir("imgs")
+end
 
 try
 	using CairoMakie

@@ -1,0 +1,46 @@
+\documentclass[a4paper]{ctexart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\newtheorem{AI}{AI's Explanation}
+
+\usepackage{geometry}
+\geometry{a4paper, left=2.5cm, right=2cm, top=2.5cm, bottom=2cm}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{graphicx}
+\graphicspath{{imgs/}{images/}}
+
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+
+
+\title{不确定性的数学基础}
+\author{陈钦}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section{数学}
+
+\begin{AI}
+“一门学问，只有当它成功地被数学化时，才算真正开始了对自身的研究。”
+\end{AI}
+
+要描述不确定性，其基础就是数理统计、概率论、随机过程等工具。
+这些数学工具的基础则是集合论、拓扑学、测度论等。
+
+基本的概率理论中，关于不确定性的基本数学形式为三元组 $(\Omega, \mathcal{F}, P)$ 。
+其中 $\Omega$ 是样本空间，
+$\mathcal{F}$ 是 $\Omega$ 上的 $\sigma$-代数，
+$P$ 是定义在 $\mathcal{F}$ 上的概率测度。
+在这个三元组中，
+$\Omega$ 描述了所有可能的结果，
+$\mathcal{F}$ 描述了事件的集合，
+而 $P$ 则为每个事件分配了一个概率值。
+因此，概率论提供了一个严密的框架来描述和分析不确定性。
+在这个框架中，我们可以定义随机变量、概率分布、期望值、方差等概念，这些都是理解和量化不确定性的关键工具。
+
+\end{document}

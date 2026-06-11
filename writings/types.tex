@@ -1,6 +1,7 @@
 \documentclass[a4paper]{ctexart}
 
 \usepackage{amsmath, amssymb, amsthm}
+\newtheorem{AI}{AI's Explanation}
 
 \usepackage{geometry}
 \geometry{a4paper, left=2.5cm, right=2cm, top=2.5cm, bottom=2cm}
@@ -67,14 +68,14 @@
             level 2/.append style={level distance=2.8cm, sibling angle=35, font=\Scriptsize},
         ]
         \node[concept, concept color=black!100, text=white] {不确定性来源}
-        child[concept color=blue!95!black] {
+        child[concept color=green!95] {
                 node {数据导致}
                 child { node {自然} }
                 child { node {测量} }
                 child { node {参数} }
                 child { node {描述} }
             }
-        child[concept color=orange!85!black] {
+        child[concept color=yellow!85] {
                 node {方法导致}
                 child { node {辨识} }
                 child { node {建模} }
