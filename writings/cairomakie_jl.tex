@@ -1,6 +1,7 @@
 \documentclass[a4paper]{ctexart}
 
 \usepackage{amsmath, amssymb, amsthm}
+\newtheorem{AI}{AI's Explanation}
 
 \usepackage{geometry}
 \geometry{a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
@@ -10,6 +11,9 @@
 \graphicspath{{imgs/}{images/}}
 
 \usepackage{float}
+
+
+
 
 
 \title{Julia奇怪的新的绘图库：CairoMakie}
@@ -22,7 +26,7 @@
 
 \section{Julia}
 
-好难猜啊，我们居然还有时间启动一个新的语言学习计划……
+好难猜啊，我居然还有时间启动一个新的语言学习计划……
 
 \begin{figure}[H]
     \centering
@@ -31,6 +35,29 @@
     \label{fig:julia-logo}
 \end{figure}
 
+其实放下Julia已经很多年，放下的原因多种多样，菜就是原罪。
+难道现在就不菜了吗？
+为什么还要尝试？
+生态发生了变化？
+有新的包可以蹭？
+
+\section{CairoMakie}
+
+CairoMakie是Julia中的一个绘图库，基于Cairo图形库和Makie绘图库。
+它提供了高性能的2D绘图功能，适用于科学计算、数据可视化和图形设计等领域。
+
+看到这个图形库的排名现在直接在第一，很好奇为什么会这样？
+这个包2017年才发布；而排名紧随其后的Gadfly.jl是2012年发布的；排名第三的Plots.jl是2015年发布的。
+
+\begin{AI}
+CairoMakie 在 Julia 绘图库生态中的快速流行，通常由性能、渲染质量与生态整合三方面共同驱动。
+CairoMakie的性能和功能可能是它受欢迎的原因之一。
+CairoMakie提供了丰富的绘图功能，包括线条、散点图、柱状图、热图等，能够满足不同类型的数据可视化需求。
+此外，CairoMakie的用户界面友好，易于使用，提供了丰富的文档和示例，帮助用户快速上手。
+CairoMakie还具有良好的社区支持，用户可以在社区中交流经验、分享代码和解决问题，这也促进了它的流行。
+\end{AI}
+
+上面这些什么鬼
 
 
 \end{document}
