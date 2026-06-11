@@ -1,1 +1,1 @@
-latexmk -p
+latexmk -p # & find build -type f -name '*.pdf' -print0 | xargs -0 -n1 wslview
