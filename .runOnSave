@@ -1,1 +1,4 @@
 latexmk -p # & find build -type f -name '*.pdf' -print0 | xargs -0 -n1 wslview
+
+
+pandoc proposal.md -o writings/proposal.tex --template templates/ctexart_template.tex
