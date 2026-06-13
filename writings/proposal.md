@@ -25,7 +25,7 @@ author: 陈钦
 - 围绕风洞开展计量研究，提升风洞设计的系统性和科学性，为自主、独立、新型风洞设计服务
 - 服务风洞试验鉴定的空白方向和急需方向开展计量研究，可计量性设计、全寿命计量保障等概念的提出和发展
 
-![不确定性的来源分类\label{fig:uncertainty}](uncertainty)
+![不确定性的来源分类\label{fig:uncertainty}](uncertainty.png)
 
 # 必要性与可能的收益
 
